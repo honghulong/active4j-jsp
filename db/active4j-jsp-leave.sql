@@ -1,0 +1,21 @@
+-- 请假管理表
+DROP TABLE IF EXISTS `oa_leave`;
+CREATE TABLE `oa_leave` (
+  `ID` varchar(36) NOT NULL COMMENT '主键ID',
+  `VERSIONS` int(11) DEFAULT '0' COMMENT '版本号',
+  `CREATE_NAME` varchar(50) DEFAULT NULL COMMENT '创建人',
+  `CREATE_DATE` datetime DEFAULT NULL COMMENT '创建时间',
+  `UPDATE_NAME` varchar(50) DEFAULT NULL COMMENT '最后修改人',
+  `UPDATE_DATE` datetime DEFAULT NULL COMMENT '最后修改时间',
+  `USER_ID` varchar(36) NOT NULL COMMENT '请假人ID',
+  `LEAVE_TYPE` varchar(10) NOT NULL COMMENT '请假类型（字典：oa_leave_type）',
+  `START_TIME` datetime NOT NULL COMMENT '请假开始时间',
+  `END_TIME` datetime NOT NULL COMMENT '请假结束时间',
+  `LEAVE_REASON` varchar(200) DEFAULT NULL COMMENT '请假原因',
+  `LEAVE_STATUS` varchar(10) NOT NULL DEFAULT '0' COMMENT '审批状态（0:刚提交 1:审核通过 2:被退回 3:已销假）',
+  `CANCEL_TIME` datetime DEFAULT NULL COMMENT '销假时间',
+  PRIMARY KEY (`ID`) USING BTREE,
+  KEY `IDX_USER_ID` (`USER_ID`) USING BTREE,
+  KEY `IDX_LEAVE_TYPE` (`LEAVE_TYPE`) USING BTREE,
+  KEY `IDX_LEAVE_STATUS` (`LEAVE_STATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='请假管理表';

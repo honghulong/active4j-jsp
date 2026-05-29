@@ -74,8 +74,8 @@
 			<version>3.0.7.1</version>
 		</dependency>
 		<dependency>
-			<groupId>mySQL</groupId>
-			<artifactId>mysql-connector-Java</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.35</version>
 		</dependency>
 		<!-- druid -->

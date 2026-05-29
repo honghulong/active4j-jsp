@@ -1,0 +1,7 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "maven.executable.path": "D:\\apache-maven-3.9.16\\bin\\mvn.cmd",
+    // 指定 settings.xml 的路径
+    "java.configuration.maven.userSettings": "D:\\apache-maven-3.9.16\\conf\\settings.xml",
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
